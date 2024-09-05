@@ -485,7 +485,7 @@ mod tests {
             vec![create_sr2(2, 2), create_sr2(1, 2), create_sr4(0, 2)],
         ));
 
-        //when:
+        // when:
         let compactions = scheduler.maybe_schedule_compaction(&state);
 
         // then:
@@ -515,7 +515,7 @@ mod tests {
             ],
         ));
 
-        //when:
+        // when:
         let compactions = scheduler.maybe_schedule_compaction(&state);
 
         // then:
@@ -552,7 +552,7 @@ mod tests {
             .submit_compaction(create_sr_compaction(vec![7, 6, 5, 4, 3, 2, 1, 0]))
             .unwrap();
 
-        //when:
+        // when:
         let compactions = scheduler.maybe_schedule_compaction(&state);
 
         // then:
@@ -582,7 +582,7 @@ mod tests {
             .submit_compaction(create_sr_compaction(vec![7, 6, 5, 4, 3, 2, 1, 0]))
             .unwrap();
 
-        //when:
+        // when:
         let compactions = scheduler.maybe_schedule_compaction(&state);
 
         // then:
@@ -609,7 +609,7 @@ mod tests {
             ],
         ));
 
-        //when:
+        // when:
         let compactions = scheduler.maybe_schedule_compaction(&state);
 
         // then:

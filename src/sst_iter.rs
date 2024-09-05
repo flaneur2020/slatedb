@@ -1,10 +1,11 @@
+use crate::block::Block;
+use crate::block_iterator::BlockIterator;
 use crate::db_state::SSTableHandle;
 use crate::error::SlateDBError;
 use crate::flatbuffer_types::{SsTableIndex, SsTableIndexOwned};
-use crate::{
-    block::Block, block_iterator::BlockIterator, iter::KeyValueIterator, tablestore::TableStore,
-    types::KeyValueDeletable,
-};
+use crate::iter::KeyValueIterator;
+use crate::tablestore::TableStore;
+use crate::types::KeyValueDeletable;
 use std::cmp::min;
 use std::collections::VecDeque;
 use std::sync::Arc;
@@ -227,8 +228,9 @@ mod tests {
     use crate::db_state::SsTableId;
     use crate::sst::SsTableFormat;
     use crate::test_utils::{assert_kv, OrderedBytesGenerator};
+    use object_store::memory::InMemory;
     use object_store::path::Path;
-    use object_store::{memory::InMemory, ObjectStore};
+    use object_store::ObjectStore;
     use std::sync::Arc;
 
     #[tokio::test]

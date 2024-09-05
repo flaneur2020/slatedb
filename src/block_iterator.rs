@@ -1,9 +1,7 @@
-use crate::{
-    block::{Block, TOMBSTONE},
-    error::SlateDBError,
-    iter::KeyValueIterator,
-    types::{KeyValueDeletable, ValueDeletable},
-};
+use crate::block::{Block, TOMBSTONE};
+use crate::error::SlateDBError;
+use crate::iter::KeyValueIterator;
+use crate::types::{KeyValueDeletable, ValueDeletable};
 use bytes::{Buf, Bytes};
 
 pub trait BlockLike {

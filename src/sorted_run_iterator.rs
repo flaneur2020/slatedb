@@ -147,8 +147,9 @@ mod tests {
     use crate::db_state::SsTableId;
     use crate::sst::SsTableFormat;
     use crate::test_utils::{assert_kv, OrderedBytesGenerator};
+    use object_store::memory::InMemory;
     use object_store::path::Path;
-    use object_store::{memory::InMemory, ObjectStore};
+    use object_store::ObjectStore;
     use std::sync::Arc;
     use ulid::Ulid;
 

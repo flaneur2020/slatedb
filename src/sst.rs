@@ -1,11 +1,12 @@
-use crate::block::Block;
+use crate::blob::ReadOnlyBlob;
+use crate::block::{Block, BlockBuilder};
+use crate::config::CompressionCodec;
+use crate::error::SlateDBError;
 use crate::filter::{BloomFilter, BloomFilterBuilder};
 use crate::flatbuffer_types::{
     BlockMeta, BlockMetaArgs, SsTableIndex, SsTableIndexArgs, SsTableIndexOwned, SsTableInfo,
     SsTableInfoArgs, SsTableInfoOwned,
 };
-use crate::{blob::ReadOnlyBlob, config::CompressionCodec};
-use crate::{block::BlockBuilder, error::SlateDBError};
 use bytes::{Buf, BufMut, Bytes};
 use flatbuffers::DefaultAllocator;
 use std::collections::VecDeque;

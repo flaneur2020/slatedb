@@ -1,6 +1,7 @@
 use crate::compactor::CompactionScheduler;
+use std::str::FromStr;
 use std::sync::Arc;
-use std::{str::FromStr, time::Duration};
+use std::time::Duration;
 use tokio::runtime::Handle;
 
 use crate::error::SlateDBError;

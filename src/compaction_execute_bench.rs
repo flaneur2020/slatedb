@@ -1,13 +1,13 @@
+use crate::compactor::WorkerToOrchestratorMsg;
 use crate::compactor_executor::{CompactionExecutor, CompactionJob, TokioCompactionExecutor};
 use crate::compactor_state::{Compaction, SourceId};
-use crate::config::CompactorOptions;
+use crate::config::{CompactorOptions, CompressionCodec};
 use crate::db_state::{SSTableHandle, SsTableId};
 use crate::error::SlateDBError;
 use crate::manifest_store::{ManifestStore, StoredManifest};
 use crate::sst::SsTableFormat;
 use crate::tablestore::TableStore;
 use crate::test_utils::OrderedBytesGenerator;
-use crate::{compactor::WorkerToOrchestratorMsg, config::CompressionCodec};
 use bytes::BufMut;
 use futures::stream::FuturesUnordered;
 use futures::StreamExt;
